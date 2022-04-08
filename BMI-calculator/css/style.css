@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* 
+font-family: 'Oswald', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 20, 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  background-color: rgb(47, 163, 117);
+  display: flex;
+  flex-direction: column;
+
+  height: 80vh;
+  width: 32vw;
+
+  align-items: center;
+  border-radius: 30px;
+}
+
+h1 {
+  margin: 20px 0;
+}
+.risco_divisao_titulo {
+  background-color: rgb(255, 255, 255);
+  height: 1px;
+  width: 100%;
+}
+
+.preencher {
+  display: flex;
+  flex-direction: column;
+
+  height: 70%;
+  width: 70%;
+  margin: 30px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 10px 0;
+  justify-content: space-between;
+}
+
+input {
+  height: 45px;
+  width: 65%;
+  margin-left: 15px;
+  border-radius: 10px;
+
+  border-style: none;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 59, 45);
+
+  margin: 10px 0;
+  margin-bottom: 15px;
+  height: 200px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  border-radius: 10px;
+  border-style: none;
+
+  cursor: pointer;
+
+  transition: ease-in-out, 0.2s;
+}
+
+button:hover {
+  background-color: rgb(10, 10, 10, 0.8);
+}
+
+.result {
+  background-color: rgb(25, 59, 45);
+  color: rgb(238, 238, 238);
+  height: 100%;
+  width: 100%;
+
+  font-size: 15px;
+
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 10px;
+}
