@@ -1,3 +1,3 @@
 # Preview of all projects!
 
-<img heigh = "200px" src="./images/preview_imc.PNG">
+<img heigh = "10px" src="./images/preview_imc.PNG">
