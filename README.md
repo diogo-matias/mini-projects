@@ -1,3 +1,3 @@
 # Preview of all projects!
 
-<img>
+<img src="./images/preview_imc.PNG">
