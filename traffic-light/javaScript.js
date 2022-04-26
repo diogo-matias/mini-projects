@@ -3,9 +3,6 @@ const images = document.getElementById("img");
 let indexColors = null;
 let setIntervalID = null;
 
-console.log(buttons);
-console.log(images);
-
 const trafficLight = (evento) => {
   stopInterval();
   turnOn[evento.target.id]();
