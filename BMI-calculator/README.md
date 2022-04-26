@@ -1,1 +1,1 @@
-<img src="images/preview_imc.PNG"/>
+<img src="../images/preview_imc.PNG"/>
