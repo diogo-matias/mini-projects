@@ -1,57 +1,57 @@
 const buttons = document.getElementById("buttons");
-const images = document.getElementById("img");
-let indexColors = null;
-let setIntervalID = null;
+const image = document.getElementById("image");
+let intervalID = null;
+let indexColors = -1;
+let revertLightControl = true;
 
-const trafficLight = (evento) => {
+function TurnOnLight(click) {
   stopInterval();
-  turnOn[evento.target.id]();
+
+  turnOn[click.target.id]();
+}
+
+const revertLight = () => {
+  revertLightControl === false
+    ? (revertLightControl = true)
+    : (revertLightControl = false);
+
+  changeNameButton();
+
+  indexColors = -1;
 };
 
-const controlaIndiceColors = () => {
-  if (indexColors < 2) {
-    indexColors++;
-  } else {
-    indexColors = 0;
+function changeNameButton() {
+  const buttonAutomatic = document.getElementById("automaticButton");
+
+  buttonAutomatic.textContent =
+    revertLightControl === false ? "REVERSE" : "REVERSE AGAIN";
+}
+const resetIndex = (index, limit) => (index > limit ? (index = -1) : index);
+
+function automaticButton() {
+  indexColors++;
+
+  let buttons = ["redButton", "yellowButton", "greenButton"];
+  if (revertLightControl) {
+    buttons.reverse();
   }
 
-  return indexColors;
-};
+  turnOn[buttons[indexColors]]();
+  indexColors = resetIndex(indexColors, 1);
+}
 
-const changeColors = () => {
-  controlaIndiceColors();
-  const color = ["red", "yellow", "green"];
-  turnOn[color[indexColors]]();
-
-  let mostrarCorNoConsole = null;
-  switch (indexColors) {
-    case 0:
-      ShowinConsole = "red";
-      break;
-    case 1:
-      ShowinConsole = "yellow";
-      break;
-    case 2:
-      ShowinConsole = "green";
-      break;
-
-    default:
-      break;
-  }
-  console.log(ShowinConsole);
-};
-
-const stopInterval = () => {
-  clearInterval(setIntervalID);
-};
+function stopInterval() {
+  clearInterval(intervalID);
+}
 
 const turnOn = {
-  red: () => (img.src = "./img/vermelho.png"),
-  yellow: () => (images.src = "./img/amarelo.png"),
-  green: () => (images.src = "./img/verde.png"),
-  automatic: () => {
-    setIntervalID = setInterval(changeColors, 1000);
+  redButton: () => (image.src = "./img/vermelho.png"),
+  yellowButton: () => (image.src = "./img/amarelo.png"),
+  greenButton: () => (image.src = "./img/verde.png"),
+  automaticButton: () => {
+    intervalID = setInterval(automaticButton, 1000);
+    revertLight();
   },
 };
 
-buttons.addEventListener("click", trafficLight);
+buttons.addEventListener("click", TurnOnLight);
